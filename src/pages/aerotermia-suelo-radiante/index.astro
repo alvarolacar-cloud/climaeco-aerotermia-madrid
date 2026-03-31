@@ -1,0 +1,173 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Aerotermia con Suelo Radiante",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "ClimaEco Aerotermia Madrid",
+    "telephone": "+34910555123",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle de Rafael Calvo 40",
+      "addressLocality": "Madrid",
+      "postalCode": "28010",
+      "addressCountry": "ES"
+    }
+  },
+  "areaServed": "Madrid",
+  "description": "Instalación de sistemas combinados de aerotermia y suelo radiante en Madrid. Máximo confort térmico y eficiencia energética."
+};
+
+const faqs = [
+  {
+    question: '¿Se puede poner suelo radiante sobre el suelo actual?',
+    answer: 'Sí, existen sistemas de suelo radiante de bajo perfil (apenas 2-3 cm de grosor) ideales para reformas sin necesidad de levantar el pavimento existente.'
+  },
+  {
+    question: '¿Sirve el suelo radiante para enfriar en verano?',
+    answer: 'Sí, la aerotermia permite impulsar agua fría a través del circuito de suelo radiante, logrando un efecto de suelo refrescante muy agradable y eficiente.'
+  },
+  {
+    question: '¿Cuánto tiempo tarda en calentar la vivienda?',
+    answer: 'El suelo radiante tiene más inercia térmica que los radiadores, por lo que tarda más en alcanzar la temperatura. Lo habitual es programarlo para que empiece a calentar 1-2 horas antes de necesitarlo.'
+  },
+  {
+    question: '¿Es compatible con cualquier tipo de pavimento?',
+    answer: 'Es compatible con cerámica, porcelana, piedra natural y algunos tipos de madera. Te asesoramos sobre la compatibilidad con tu pavimento actual.'
+  },
+];
+---
+
+<Layout
+  title="Aerotermia con Suelo Radiante en Madrid | ClimaEco"
+  description="Instalación de aerotermia con suelo radiante en Madrid. Máximo confort térmico, calor uniforme en invierno y frescor en verano. Presupuesto gratuito."
+  canonical="/aerotermia-suelo-radiante/"
+  schema={schemaService}
+>
+  <!-- 1. Hero Servicio — Bloque 3 Output 3.2.2 Sección 1 -->
+  <Hero
+    title="Aerotermia con Suelo Radiante."
+    subtitle="El máximo nivel de confort térmico para tu hogar. Calor uniforme en invierno y frescor en verano, sin radiadores a la vista y con el mayor ahorro energético."
+    ctaText="Ver instalación en Madrid"
+    ctaHref="/aerotermia-suelo-radiante/madrid/"
+    size="medium"
+  />
+
+  <!-- 2. Problema / Solución — Bloque 3 Output 3.2.2 Sección 2 -->
+  <section class="bg-white py-16">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1">
+          <h2 class="text-primary mb-4">Climatización invisible y eficiente</h2>
+          <p class="text-text text-lg leading-relaxed mb-4">
+            Los sistemas tradicionales de calefacción resecan el ambiente y distribuyen el calor de forma desigual. Al combinar aerotermia con suelo radiante, el agua circula a <strong>baja temperatura bajo el pavimento</strong>, logrando una climatización invisible, silenciosa y altamente eficiente.
+          </p>
+          <ul class="flex flex-col gap-3">
+            {[
+              'Temperatura uniforme en toda la estancia',
+              'Sin radiadores ni elementos visibles',
+              'Funciona a baja temperatura (35-45°C) — máxima eficiencia',
+              'Compatible con refrigeración en verano',
+              'Silencioso y sin corrientes de aire',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-text">
+                <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="flex-1 bg-secondary/10 rounded-base p-8">
+          <h3 class="text-primary mb-4">¿Por qué a baja temperatura?</h3>
+          <p class="text-text leading-relaxed">
+            El suelo radiante trabaja a 35-45°C, mientras que los radiadores necesitan 70-80°C. La aerotermia es mucho más eficiente a bajas temperaturas, por lo que la combinación de ambos sistemas maximiza el ahorro energético.
+          </p>
+          <div class="mt-4 p-4 bg-white rounded-base border-l-4 border-accent">
+            <p class="text-primary font-semibold text-sm m-0">Ahorro estimado vs caldera de gas:</p>
+            <p class="text-accent text-2xl font-bold m-0">hasta 65%</p>
+            <p class="text-text text-xs m-0">en la factura anual de calefacción</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Proceso — Bloque 3 Output 3.2.2 Sección 3 -->
+  <section class="bg-secondary/10 py-16">
+    <div class="container">
+      <h2 class="text-primary text-center mb-10">Proceso de instalación de suelo radiante</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {[
+          { step: '01', title: 'Estudio planimétrico', desc: 'Cálculo de cargas y diseño del circuito de tuberías para cada estancia.' },
+          { step: '02', title: 'Paneles aislantes y tuberías PEX', desc: 'Instalación de paneles aislantes y circuitos de tuberías PEX-a con barrera antioxígeno.' },
+          { step: '03', title: 'Mortero autonivelante', desc: 'Vertido de mortero de alta conductividad térmica para cubrir el circuito.' },
+          { step: '04', title: 'Conexión a la bomba de calor', desc: 'Conexión al equipo de aerotermia y equilibrado de colectores.' },
+        ].map((item) => (
+          <div class="bg-white rounded-base p-6 text-center shadow-sm">
+            <div class="text-accent text-3xl font-bold mb-3">{item.step}</div>
+            <h3 class="text-primary text-base font-semibold mb-2">{item.title}</h3>
+            <p class="text-text text-sm leading-relaxed m-0">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Materiales / Opciones — Bloque 3 Output 3.2.2 Sección 4 -->
+  <section class="bg-white py-16">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-6">Materiales que garantizan la durabilidad</h2>
+      <p class="text-text text-lg leading-relaxed mb-6">
+        Utilizamos tuberías de <strong>polietileno reticulado (PEX-a) con barrera antioxígeno</strong>, colectores de polímero con caudalímetros integrados y morteros de alta conductividad térmica para garantizar la máxima transmisión de energía.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[
+          { title: 'Tuberías PEX-a', desc: 'Barrera antioxígeno — máxima durabilidad y flexibilidad' },
+          { title: 'Colectores con caudalímetros', desc: 'Control preciso del caudal en cada circuito' },
+          { title: 'Mortero alta conductividad', desc: 'Transmisión óptima del calor al pavimento' },
+        ].map((item) => (
+          <div class="border border-gray-200 rounded-base p-5">
+            <h3 class="text-primary text-base font-semibold mb-1">{item.title}</h3>
+            <p class="text-text text-sm m-0">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Dónde operamos — Bloque 3 Output 3.2.2 Sección 5 -->
+  <section class="bg-primary py-12">
+    <div class="container text-center">
+      <h2 class="text-white mb-4">Aerotermia con suelo radiante en Madrid</h2>
+      <p class="text-white/85 text-lg max-w-2xl mx-auto mb-8">
+        Diseñamos e instalamos sistemas completos de aerotermia con suelo radiante en <strong class="text-accent">Madrid</strong>. Conoce cómo adaptamos la instalación a tu tipo de vivienda en nuestra página local.
+      </p>
+      <a href="/aerotermia-suelo-radiante/madrid/" class="btn-primary text-base">
+        Ver instalación en Madrid →
+      </a>
+    </div>
+  </section>
+
+  <!-- 6. FAQs — Bloque 3 Output 3.2.2 Sección 6 -->
+  <FAQ
+    title="Preguntas frecuentes sobre aerotermia con suelo radiante"
+    items={faqs}
+  />
+
+  <!-- 7. CTA Final — Bloque 3 Output 3.2.2 Sección 7 -->
+  <CTABanner
+    title="¿Quieres instalar suelo radiante en Madrid?"
+    subtitle="Descubre las opciones de instalación y solicita un estudio técnico para tu vivienda en Madrid."
+    ctaText="Solicitar estudio técnico en Madrid"
+    ctaHref="/aerotermia-suelo-radiante/madrid/"
+    bg="light"
+  />
+</Layout>

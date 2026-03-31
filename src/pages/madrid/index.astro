@@ -1,0 +1,221 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const schemaLocalBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ClimaEco Aerotermia Madrid",
+  "url": "https://climaecoaerotermia.es/madrid/",
+  "telephone": "+34910555123",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle de Rafael Calvo 40",
+    "addressLocality": "Madrid",
+    "postalCode": "28010",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.4352,
+    "longitude": -3.6931
+  },
+  "areaServed": "Madrid",
+  "description": "Instaladores de aerotermia en Madrid. Especialistas en sistemas de climatización eficiente y bombas de calor para hogares en toda la capital."
+};
+---
+
+<Layout
+  title="Instaladores de Aerotermia en Madrid | ClimaEco — Todos los servicios"
+  description="Instaladores de aerotermia en Madrid. Instalación, suelo radiante y mantenimiento de bombas de calor en Chamberí, Salamanca, Chamartín y toda la capital."
+  canonical="/madrid/"
+  schema={schemaLocalBusiness}
+>
+  <!-- 1. Hero Ciudad -->
+  <Hero
+    title="Instaladores de Aerotermia en Madrid."
+    subtitle="Especialistas en sistemas de climatización eficiente y bombas de calor para hogares en toda la capital y alrededores."
+    ctaText="Solicitar presupuesto"
+    ctaHref="/contacto/"
+    ctaSecondaryText="Llamar ahora"
+    ctaSecondaryHref="tel:+34910555123"
+    size="large"
+  />
+
+  <!-- 2. Contexto local real — Por qué Madrid es diferente -->
+  <section class="bg-white py-16">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-6">Por qué instalar aerotermia en Madrid tiene sus particularidades</h2>
+      <p class="text-text text-lg leading-relaxed mb-4">
+        Madrid concentra más de 1,5 millones de viviendas, de las cuales una gran parte son pisos construidos entre los años 60 y 90 con sistemas de calefacción central o caldera de gas individual. Este parque de viviendas envejecido es precisamente el que más se beneficia de la transición a la aerotermia: los ahorros en la factura energética son más pronunciados y las subvenciones del Plan Renove de la Comunidad de Madrid cubren hasta el 30% del coste de instalación.
+      </p>
+      <p class="text-text text-lg leading-relaxed mb-6">
+        Sin embargo, instalar aerotermia en la capital no es lo mismo que hacerlo en una vivienda unifamiliar en las afueras. Los pisos en distritos como <strong>Chamberí</strong>, <strong>Salamanca</strong> o <strong>Chamartín</strong> requieren gestionar la colocación de la unidad exterior en fachada o azotea, lo que implica solicitar licencias de obra menor al Ayuntamiento de Madrid y, en muchos casos, obtener la aprobación de la comunidad de propietarios. Nosotros gestionamos toda esta tramitación.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-gray-50 rounded-base p-5 border border-gray-200 text-center">
+          <div class="text-primary text-3xl font-bold mb-1">70%</div>
+          <p class="text-text text-sm m-0">Ahorro medio en la factura energética frente a caldera de gas</p>
+        </div>
+        <div class="bg-gray-50 rounded-base p-5 border border-gray-200 text-center">
+          <div class="text-primary text-3xl font-bold mb-1">30%</div>
+          <p class="text-text text-sm m-0">Subvención máxima del Plan Renove de la Comunidad de Madrid</p>
+        </div>
+        <div class="bg-gray-50 rounded-base p-5 border border-gray-200 text-center">
+          <div class="text-primary text-3xl font-bold mb-1">5–7 años</div>
+          <p class="text-text text-sm m-0">Plazo medio de amortización en un piso de 100 m² en Madrid</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Tipos de vivienda en Madrid y cómo afecta a la instalación -->
+  <section class="bg-gray-50 py-16">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-6">El parque de viviendas de Madrid y la aerotermia</h2>
+      <p class="text-text text-lg leading-relaxed mb-6">
+        No todas las viviendas de Madrid son iguales, y la solución de aerotermia tampoco lo es. Estos son los tres perfiles más habituales con los que trabajamos:
+      </p>
+      <div class="flex flex-col gap-5">
+        <div class="bg-white rounded-base p-6 border border-gray-200 shadow-sm">
+          <h3 class="text-primary font-semibold text-lg mb-2">Piso en edificio plurifamiliar (centro y distritos consolidados)</h3>
+          <p class="text-text leading-relaxed m-0">
+            Es el caso más frecuente en Chamberí, Salamanca o Retiro. La unidad exterior suele ir en la azotea o en un patio interior. Requiere licencia de obra menor y, si el edificio está protegido, un informe técnico adicional. La instalación interior se adapta a los radiadores existentes, sin necesidad de obra.
+          </p>
+        </div>
+        <div class="bg-white rounded-base p-6 border border-gray-200 shadow-sm">
+          <h3 class="text-primary font-semibold text-lg mb-2">Piso en reforma integral (cualquier distrito)</h3>
+          <p class="text-text leading-relaxed m-0">
+            Cuando se está reformando la vivienda, es el momento ideal para instalar suelo radiante junto con la aerotermia. El coste de levantar el suelo ya está contemplado en la obra, y el resultado es el sistema de climatización más eficiente disponible: hasta un 75% de ahorro frente al gas.
+          </p>
+        </div>
+        <div class="bg-white rounded-base p-6 border border-gray-200 shadow-sm">
+          <h3 class="text-primary font-semibold text-lg mb-2">Chalet o vivienda unifamiliar (norte y periferia)</h3>
+          <p class="text-text leading-relaxed m-0">
+            En Chamartín, Hortaleza o las urbanizaciones del norte de Madrid, la aerotermia es la opción más habitual para sustituir calderas de gasoil o gas. El espacio exterior facilita la instalación y los equipos de mayor potencia permiten climatizar superficies de 200 m² o más con máxima eficiencia.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Silos de servicio — distribución estructurada -->
+  <section class="bg-white py-16">
+    <div class="container">
+      <h2 class="text-primary text-center mb-3">Nuestros servicios en Madrid</h2>
+      <p class="text-center text-text max-w-2xl mx-auto mb-10">
+        Cubrimos el ciclo completo de la aerotermia en Madrid: instalación, integración con suelo radiante y mantenimiento preventivo.
+      </p>
+
+      <!-- Servicio core destacado -->
+      <div class="bg-primary/5 border border-primary/20 rounded-base p-8 mb-6">
+        <div class="flex flex-col md:flex-row items-start gap-6">
+          <div class="flex-1">
+            <span class="inline-block bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">Servicio principal</span>
+            <h3 class="text-primary text-2xl font-semibold mb-3">Instalación de Aerotermia en Madrid</h3>
+            <p class="text-text leading-relaxed mb-4">
+              Instalación completa de bomba de calor para calefacción, refrigeración y ACS. Gestionamos las licencias del Ayuntamiento de Madrid, tramitamos las subvenciones del Plan Renove y garantizamos el funcionamiento del equipo durante 2 años. Presupuesto en 24 horas.
+            </p>
+            <div class="flex flex-wrap gap-3 text-sm text-text">
+              <span class="bg-white border border-gray-200 rounded px-3 py-1">Gestión de licencias incluida</span>
+              <span class="bg-white border border-gray-200 rounded px-3 py-1">Tramitación Plan Renove</span>
+              <span class="bg-white border border-gray-200 rounded px-3 py-1">Garantía 2 años</span>
+            </div>
+          </div>
+          <a href="/instalacion-aerotermia/madrid/" class="shrink-0 bg-accent text-white font-semibold px-6 py-3 rounded-base hover:bg-accent/90 transition-colors no-underline">
+            Ver instalación en Madrid →
+          </a>
+        </div>
+      </div>
+
+      <!-- Servicios secundarios -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-50 border border-gray-200 rounded-base p-6">
+          <h3 class="text-primary text-xl font-semibold mb-3">Aerotermia con Suelo Radiante en Madrid</h3>
+          <p class="text-text leading-relaxed mb-4">
+            La combinación más eficiente: la aerotermia trabaja a menor temperatura con suelo radiante, lo que puede suponer hasta un 40% más de eficiencia frente a los radiadores convencionales. Ideal para reformas integrales en toda la capital.
+          </p>
+          <a href="/aerotermia-suelo-radiante/madrid/" class="inline-block text-secondary font-semibold hover:text-primary transition-colors no-underline">
+            Ver suelo radiante en Madrid →
+          </a>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-base p-6">
+          <h3 class="text-primary text-xl font-semibold mb-3">Mantenimiento de Aerotermia en Madrid</h3>
+          <p class="text-text leading-relaxed mb-4">
+            Revisiones preventivas anuales obligatorias según el RITE, reparaciones urgentes y certificados de mantenimiento. Precio cerrado antes de la visita. Técnicos certificados en toda la capital.
+          </p>
+          <a href="/mantenimiento-aerotermia/madrid/" class="inline-block text-secondary font-semibold hover:text-primary transition-colors no-underline">
+            Ver mantenimiento en Madrid →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Cobertura geográfica -->
+  <section class="bg-secondary/10 py-16">
+    <div class="container">
+      <h2 class="text-primary text-center mb-4">Cobertura en Madrid</h2>
+      <p class="text-center text-text max-w-2xl mx-auto mb-10">
+        Damos servicio integral en toda el área metropolitana de Madrid, cubriendo los distritos centrales y la periferia norte y sur.
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          'Chamberí',
+          'Salamanca',
+          'Chamartín',
+          'Retiro',
+          'Centro',
+          'Tetuán',
+          'Hortaleza',
+          'Moncloa',
+        ].map((zona) => (
+          <div class="bg-white rounded-base p-4 text-center border border-gray-200 shadow-sm">
+            <span class="text-primary font-medium text-sm">{zona}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. GeoArticles — Guías -->
+  <section class="bg-primary py-16">
+    <div class="container">
+      <h2 class="text-white text-center mb-3">Guías sobre aerotermia en Madrid</h2>
+      <p class="text-white/80 text-center max-w-2xl mx-auto mb-10">
+        Resuelve tus dudas antes de tomar una decisión con nuestras guías especializadas sobre el mercado de Madrid.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {[
+          { title: '¿Cuánto cuesta instalar aerotermia en Madrid?', href: '/madrid/cuanto-cuesta-instalar-aerotermia/', desc: 'Precios reales, factores que influyen y cálculo de amortización.' },
+          { title: 'Aerotermia vs Caldera de Gas: ¿Cuál es mejor?', href: '/madrid/aerotermia-vs-caldera-gas/', desc: 'Comparativa de eficiencia, coste y normativas para viviendas en Madrid.' },
+          { title: 'Precio de aerotermia con suelo radiante en Madrid', href: '/madrid/precio-aerotermia-suelo-radiante/', desc: 'Desglose de costes y cuándo compensa la inversión.' },
+          { title: '¿Cada cuánto hacer mantenimiento a la aerotermia?', href: '/madrid/cada-cuanto-mantenimiento-aerotermia/', desc: 'Frecuencias obligatorias según el RITE y tareas que puedes hacer tú mismo.' },
+        ].map((guide) => (
+          <a
+            href={guide.href}
+            class="bg-white/10 hover:bg-white/20 text-white p-5 rounded-base flex flex-col gap-2 no-underline transition-colors group"
+          >
+            <div class="flex items-start justify-between gap-4">
+              <span class="font-semibold leading-snug">{guide.title}</span>
+              <svg class="w-5 h-5 shrink-0 text-accent group-hover:translate-x-1 transition-transform mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+            <span class="text-white/70 text-sm">{guide.desc}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CTA final -->
+  <CTABanner
+    title="¿Quieres saber si la aerotermia es viable en tu vivienda de Madrid?"
+    subtitle="Solicita un estudio técnico gratuito. Presupuesto en 24 horas, sin compromiso."
+    ctaText="Solicitar estudio gratuito"
+    ctaHref="/contacto/"
+    bg="light"
+  />
+</Layout>

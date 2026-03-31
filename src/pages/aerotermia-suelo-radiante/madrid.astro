@@ -1,0 +1,175 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import FAQ from '../../components/FAQ.astro';
+import ContactForm from '../../components/ContactForm.astro';
+
+const schemaLocalBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ClimaEco Aerotermia Madrid",
+  "url": "https://climaecoaerotermia.es/aerotermia-suelo-radiante/madrid/",
+  "telephone": "+34910555123",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle de Rafael Calvo 40",
+    "addressLocality": "Madrid",
+    "postalCode": "28010",
+    "addressCountry": "ES"
+  },
+  "areaServed": "Madrid"
+};
+
+const faqs = [
+  {
+    question: '¿Puedo instalar suelo radiante en un piso de Madrid sin hacer obra grande?',
+    answer: 'Sí. Existen sistemas de suelo radiante de bajo perfil (2-3 cm) que se instalan sobre el pavimento existente, ideales para reformas en pisos de Madrid sin necesidad de levantar el suelo actual.'
+  },
+  {
+    question: '¿Necesito permiso de la comunidad para instalar suelo radiante?',
+    answer: 'El suelo radiante es una obra interior que no afecta a elementos comunes, por lo que generalmente no requiere permiso de la comunidad. Sí puede necesitar licencia de obra menor del Ayuntamiento.'
+  },
+  {
+    question: '¿Cuánto tiempo tarda en calentar en invierno?',
+    answer: 'El suelo radiante tiene más inercia térmica que los radiadores. Lo habitual es programar el sistema para que empiece a calentar 1-2 horas antes de necesitarlo, o mantenerlo a temperatura constante.'
+  },
+  {
+    question: '¿Puedo acceder a subvenciones del Plan Renove para suelo radiante?',
+    answer: 'Sí, la instalación combinada de aerotermia con suelo radiante puede acogerse al Plan Renove de la Comunidad de Madrid. Nosotros gestionamos toda la tramitación.'
+  },
+];
+---
+
+<Layout
+  title="Aerotermia con Suelo Radiante en Madrid | ClimaEco"
+  description="Instalación de aerotermia con suelo radiante en Madrid. Máximo confort térmico en Chamberí, Salamanca y toda la capital. Presupuesto gratuito en 24h."
+  canonical="/aerotermia-suelo-radiante/madrid/"
+  schema={schemaLocalBusiness}
+>
+  <Hero
+    title="Aerotermia con Suelo Radiante en Madrid."
+    subtitle="El sistema de climatización más confortable para tu hogar en Madrid. Calor uniforme bajo tus pies en invierno y frescor en verano. Pide tu estudio técnico gratuito."
+    ctaText="Pedir estudio gratuito"
+    ctaHref="#contacto"
+    ctaSecondaryText="Llamar ahora"
+    ctaSecondaryHref="tel:+34910555123"
+    size="large"
+  />
+
+  <section class="bg-white py-16">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-4">Suelo radiante adaptado a las viviendas de Madrid</h2>
+      <p class="text-text text-lg leading-relaxed mb-4">
+        Madrid cuenta con un parque de viviendas muy diverso: desde pisos históricos en <strong>Chamberí</strong> con suelos de mármol o parquet antiguo, hasta viviendas modernas en <strong>Chamartín</strong> con losa de hormigón. Adaptamos el sistema de suelo radiante a cada caso.
+      </p>
+      <p class="text-text leading-relaxed">
+        En reformas integrales, instalamos el sistema bajo el nuevo pavimento. En reformas parciales, utilizamos sistemas de bajo perfil que apenas añaden 2-3 cm de altura, sin necesidad de levantar el suelo existente.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-16">
+    <div class="container">
+      <h2 class="text-primary text-center mb-10">Cobertura en Madrid</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-base p-6 border-l-4 border-accent shadow-sm">
+          <h3 class="text-primary font-semibold mb-2">Chamberí <span class="text-accent text-xs font-normal">(Zona principal)</span></h3>
+          <p class="text-text text-sm leading-relaxed m-0">Especialistas en reformas en pisos de Chamberí — Almagro, Trafalgar, Ríos Rosas. Adaptamos el sistema al pavimento existente.</p>
+        </div>
+        <div class="bg-white rounded-base p-6 border-l-4 border-secondary shadow-sm">
+          <h3 class="text-primary font-semibold mb-2">Salamanca</h3>
+          <p class="text-text text-sm leading-relaxed m-0">Instalaciones de alto standing en Salamanca — Recoletos, Goya, Lista. Viviendas con exigencias técnicas y estéticas elevadas.</p>
+        </div>
+        <div class="bg-white rounded-base p-6 border-l-4 border-gray-300 shadow-sm">
+          <h3 class="text-primary font-semibold mb-2">Chamartín</h3>
+          <p class="text-text text-sm leading-relaxed m-0">Servicio en Chamartín — El Viso, Prosperidad. Chalets e instalaciones con mayor superficie y flexibilidad de obra.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-start gap-12">
+        <div class="flex-1">
+          <h2 class="text-primary mb-4">Gestión completa en Madrid</h2>
+          <p class="text-text text-lg leading-relaxed mb-4">
+            Gestionamos la tramitación de licencias de obra menor con el <strong>Ayuntamiento de Madrid</strong> y las subvenciones del <strong>Plan Renove de la Comunidad de Madrid</strong> para equipos de alta eficiencia.
+          </p>
+          <ul class="flex flex-col gap-3">
+            {[
+              'Estudio técnico y planimétrico de tu vivienda',
+              'Tramitación de licencias de obra menor',
+              'Gestión de subvenciones Plan Renove (hasta 30%)',
+              'Instalación con mínima interferencia en tu vida diaria',
+              '2 años de garantía en mano de obra y equipos',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-text">
+                <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="flex-1 bg-primary rounded-base p-8 text-white">
+          <h3 class="text-white mb-4">Coste orientativo en Madrid</h3>
+          <div class="flex flex-col gap-4">
+            <div class="border-b border-white/20 pb-3">
+              <div class="text-white/70 text-sm">Equipo de aerotermia</div>
+              <div class="text-accent text-xl font-bold">6.000€ — 9.000€</div>
+            </div>
+            <div class="border-b border-white/20 pb-3">
+              <div class="text-white/70 text-sm">Suelo radiante (por m²)</div>
+              <div class="text-accent text-xl font-bold">40€ — 60€/m²</div>
+            </div>
+            <div>
+              <div class="text-white/70 text-sm">Total para 100 m²</div>
+              <div class="text-accent text-xl font-bold">10.000€ — 15.000€</div>
+            </div>
+          </div>
+          <p class="text-white/60 text-xs mt-4 m-0">Precios orientativos. Solicita un presupuesto personalizado para tu vivienda.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-secondary/10 py-12">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-6">¿Tienes dudas sobre el sistema?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="/madrid/precio-aerotermia-suelo-radiante/" class="flex items-center gap-3 p-4 border border-gray-200 bg-white rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">Precio detallado de aerotermia con suelo radiante en Madrid</span>
+        </a>
+        <a href="/aerotermia-suelo-radiante/" class="flex items-center gap-3 p-4 border border-gray-200 bg-white rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">Detalles técnicos del servicio de suelo radiante</span>
+        </a>
+        <a href="/madrid/" class="flex items-center gap-3 p-4 border border-gray-200 bg-white rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">Todos los servicios de aerotermia en Madrid</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <FAQ
+    title="Preguntas frecuentes sobre suelo radiante en Madrid"
+    items={faqs}
+  />
+
+  <div id="contacto">
+    <ContactForm
+      title="Solicita tu estudio técnico gratuito en Madrid"
+      subtitle="Evaluamos tu vivienda y te entregamos un presupuesto detallado en 24 horas."
+    />
+  </div>
+</Layout>

@@ -1,0 +1,29 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  href: string;
+  ctaText?: string;
+  variant?: 'service' | 'article' | 'location';
+}
+
+const {
+  title,
+  description,
+  href,
+  ctaText = 'Ver más',
+  variant = 'service',
+} = Astro.props;
+
+const borderClass = variant === 'article'
+  ? 'border-l-4 border-l-accent'
+  : 'border border-gray-100';
+---
+
+<div class={`bg-white rounded-base ${borderClass} p-6 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow`}>
+  <h3 class="text-primary text-xl font-semibold m-0">{title}</h3>
+  <p class="text-text text-base leading-relaxed flex-1 m-0">{description}</p>
+  <a href={href} class="btn-secondary text-sm text-center self-start">
+    {ctaText}
+  </a>
+</div>

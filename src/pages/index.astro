@@ -1,0 +1,249 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const schemaLocalBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ClimaEco Aerotermia Madrid",
+  "url": "https://climaecoaerotermia.es",
+  "telephone": "+34910555123",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle de Rafael Calvo 40",
+    "addressLocality": "Madrid",
+    "postalCode": "28010",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.4352,
+    "longitude": -3.6931
+  },
+  "areaServed": "Madrid",
+  "description": "Especialistas en instalación de aerotermia en Madrid. Calefacción, refrigeración y ACS con bombas de calor de alta eficiencia."
+};
+---
+
+<Layout
+  title="Instalación de Aerotermia en Madrid | ClimaEco Aerotermia"
+  description="Reduce tu factura energética hasta un 70% con aerotermia. Instaladores certificados en Madrid. Presupuesto gratuito en 24h."
+  canonical="/"
+  schema={schemaLocalBusiness}
+>
+  <!-- 1. Hero — Bloque 3 Output 3.1 Sección 1 -->
+  <Hero
+    title="Instalación de Aerotermia en Madrid."
+    subtitle="Reduce tu factura energética hasta un 70% con el sistema de climatización más eficiente. Solicita tu estudio de viabilidad gratuito."
+    ctaText="Pedir presupuesto gratuito"
+    ctaHref="/contacto/"
+    ctaSecondaryText="Ver nuestros servicios"
+    ctaSecondaryHref="/instalacion-aerotermia/"
+    size="large"
+  />
+
+  <!-- 2. Servicios Core — con jerarquía: servicio principal destacado + secundarios -->
+  <section class="bg-white py-16">
+    <div class="container">
+      <h2 class="text-primary text-center mb-3">Nuestros servicios de aerotermia</h2>
+      <p class="text-center text-text max-w-2xl mx-auto mb-10">
+        Sistema integral de climatización para tu hogar: calefacción, refrigeración y agua caliente sanitaria en un solo equipo.
+      </p>
+
+      <!-- Servicio core destacado -->
+      <div class="bg-primary/5 border-2 border-primary/20 rounded-base p-8 mb-6">
+        <div class="flex flex-col md:flex-row items-start gap-6">
+          <div class="flex-1">
+            <span class="inline-block bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">Servicio principal</span>
+            <h3 class="text-primary text-2xl font-semibold mb-3">Instalación de Aerotermia en Madrid</h3>
+            <p class="text-text leading-relaxed mb-4">
+              Instalación completa de bomba de calor para calefacción, refrigeración y ACS. Gestionamos las licencias del Ayuntamiento, tramitamos las subvenciones del Plan Renove y garantizamos el funcionamiento del equipo durante 2 años. Presupuesto en 24 horas.
+            </p>
+            <div class="flex flex-wrap gap-3 text-sm text-text">
+              <span class="bg-white border border-gray-200 rounded px-3 py-1">Gestión de licencias incluida</span>
+              <span class="bg-white border border-gray-200 rounded px-3 py-1">Tramitación Plan Renove</span>
+              <span class="bg-white border border-gray-200 rounded px-3 py-1">Garantía 2 años</span>
+            </div>
+          </div>
+          <a href="/instalacion-aerotermia/" class="shrink-0 bg-accent text-white font-semibold px-6 py-3 rounded-base hover:bg-accent/90 transition-colors no-underline">
+            Ver instalación de aerotermia →
+          </a>
+        </div>
+      </div>
+
+      <!-- Servicios secundarios -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-50 border border-gray-200 rounded-base p-6">
+          <h3 class="text-primary text-xl font-semibold mb-3">Aerotermia con Suelo Radiante</h3>
+          <p class="text-text leading-relaxed mb-4">
+            La combinación más eficiente: la aerotermia trabaja a menor temperatura con suelo radiante, lo que puede suponer hasta un 40% más de eficiencia. Ideal para reformas integrales.
+          </p>
+          <a href="/aerotermia-suelo-radiante/" class="inline-block text-secondary font-semibold hover:text-primary transition-colors no-underline">
+            Ver suelo radiante →
+          </a>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-base p-6">
+          <h3 class="text-primary text-xl font-semibold mb-3">Mantenimiento de Aerotermia</h3>
+          <p class="text-text leading-relaxed mb-4">
+            Revisiones preventivas anuales obligatorias según el RITE, reparaciones urgentes y certificados de mantenimiento. Precio cerrado antes de la visita.
+          </p>
+          <a href="/mantenimiento-aerotermia/" class="inline-block text-secondary font-semibold hover:text-primary transition-colors no-underline">
+            Ver mantenimiento →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Autoridad — Bloque 3 Output 3.1 Sección 3 -->
+  <section class="bg-secondary/10 py-16">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1">
+          <h2 class="text-primary mb-4">¿Por qué elegir ClimaEco?</h2>
+          <p class="text-text text-lg leading-relaxed mb-6">
+            Más de 10 años de experiencia instalando sistemas de climatización avanzados. Contamos con instaladores certificados y ofrecemos <strong>2 años de garantía por escrito</strong> en todas nuestras instalaciones.
+          </p>
+          <ul class="flex flex-col gap-3">
+            {[
+              'Instaladores autorizados por el Ministerio de Industria',
+              'Presupuesto cerrado sin sorpresas de última hora',
+              'Gestión completa de subvenciones del Plan Renove',
+              'Servicio técnico propio — no subcontratamos',
+              'Garantía total de 2 años en mano de obra y equipos',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-text">
+                <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="flex-1 bg-primary rounded-base p-8 text-white">
+          <div class="grid grid-cols-2 gap-6">
+            {[
+              { num: '+10', label: 'Años de experiencia' },
+              { num: '+500', label: 'Instalaciones realizadas' },
+              { num: '2 años', label: 'Garantía por escrito' },
+              { num: '70%', label: 'Ahorro energético medio' },
+            ].map((stat) => (
+              <div class="text-center">
+                <div class="text-accent text-3xl font-bold">{stat.num}</div>
+                <div class="text-white/80 text-sm mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Zonas — cards de Location Pages con datos concretos -->
+  <section class="bg-white py-16">
+    <div class="container">
+      <h2 class="text-primary text-center mb-4">Aerotermia en Madrid: resultados reales</h2>
+      <p class="text-center text-text max-w-2xl mx-auto mb-10">
+        Trabajamos en toda la capital. Estos son tres ejemplos reales de instalaciones en Madrid y los resultados obtenidos.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-gray-50 border border-gray-200 rounded-base p-6 flex flex-col">
+          <div class="text-accent font-bold text-sm mb-2 uppercase tracking-wide">Instalación</div>
+          <h3 class="text-primary font-semibold text-lg mb-2">Piso 140 m² en Chamberí</h3>
+          <p class="text-text text-sm leading-relaxed mb-4 flex-1">
+            Sustitución de caldera de gas por aerotermia. Instalación en 2 días. Ahorro del 62% en la factura anual. Subvención Plan Renove tramitada.
+          </p>
+          <a href="/instalacion-aerotermia/madrid/" class="text-secondary font-semibold text-sm hover:text-primary transition-colors no-underline">
+            Ver instalación en Madrid →
+          </a>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-base p-6 flex flex-col">
+          <div class="text-accent font-bold text-sm mb-2 uppercase tracking-wide">Suelo Radiante</div>
+          <h3 class="text-primary font-semibold text-lg mb-2">Reforma 95 m² en Salamanca</h3>
+          <p class="text-text text-sm leading-relaxed mb-4 flex-1">
+            Aerotermia con suelo radiante en reforma integral. Temperatura uniforme en toda la vivienda. Ahorro del 75% frente al gas. Amortización en 6 años.
+          </p>
+          <a href="/aerotermia-suelo-radiante/madrid/" class="text-secondary font-semibold text-sm hover:text-primary transition-colors no-underline">
+            Ver suelo radiante en Madrid →
+          </a>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-base p-6 flex flex-col">
+          <div class="text-accent font-bold text-sm mb-2 uppercase tracking-wide">Mantenimiento</div>
+          <h3 class="text-primary font-semibold text-lg mb-2">Chalet 220 m² en Chamartín</h3>
+          <p class="text-text text-sm leading-relaxed mb-4 flex-1">
+            Revisión anual obligatoria según RITE. Certificado emitido el mismo día. Detección preventiva de pérdida de presión antes de la temporada de invierno.
+          </p>
+          <a href="/mantenimiento-aerotermia/madrid/" class="text-secondary font-semibold text-sm hover:text-primary transition-colors no-underline">
+            Ver mantenimiento en Madrid →
+          </a>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a href="/madrid/" class="inline-block border-2 border-primary text-primary font-semibold px-6 py-3 rounded-base hover:bg-primary hover:text-white transition-colors no-underline">
+          Ver todos los servicios en Madrid →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Prueba social — Bloque 3 Output 3.1 Sección 5 -->
+  <section class="bg-gray-50 py-16">
+    <div class="container max-w-4xl">
+      <h2 class="text-primary text-center mb-10">Lo que dicen nuestros clientes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <blockquote class="bg-white p-6 rounded-base border border-gray-100 shadow-sm">
+          <p class="text-text italic leading-relaxed mb-4">
+            "Instalaron aerotermia en nuestro piso antiguo y el ahorro en invierno es brutal. Una obra rápida, limpia y un equipo muy profesional."
+          </p>
+          <footer class="text-primary font-semibold text-sm">— Carlos M., Chamberí</footer>
+        </blockquote>
+        <blockquote class="bg-white p-6 rounded-base border border-gray-100 shadow-sm">
+          <p class="text-text italic leading-relaxed mb-4">
+            "Nos gestionaron todo el papeleo del Plan Renove. Al final la instalación nos salió mucho más barata de lo que esperábamos."
+          </p>
+          <footer class="text-primary font-semibold text-sm">— Ana R., Salamanca</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recursos / Guías — Layout-Map: Grid 2 cols, fondo primario -->
+  <section class="bg-primary py-16">
+    <div class="container">
+      <h2 class="text-white text-center mb-3">Guías sobre aerotermia en Madrid</h2>
+      <p class="text-white/80 text-center max-w-2xl mx-auto mb-10">
+        Resuelve tus dudas antes de tomar una decisión.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {[
+          { title: '¿Cuánto cuesta instalar aerotermia en Madrid?', href: '/madrid/cuanto-cuesta-instalar-aerotermia/' },
+          { title: 'Aerotermia vs Caldera de Gas: ¿Cuál es mejor?', href: '/madrid/aerotermia-vs-caldera-gas/' },
+          { title: 'Precio de aerotermia con suelo radiante en Madrid', href: '/madrid/precio-aerotermia-suelo-radiante/' },
+          { title: '¿Cada cuánto hacer mantenimiento a la aerotermia?', href: '/madrid/cada-cuanto-mantenimiento-aerotermia/' },
+        ].map((guide) => (
+          <a
+            href={guide.href}
+            class="bg-white/10 hover:bg-white/20 text-white p-5 rounded-base flex items-center justify-between gap-4 no-underline transition-colors group"
+          >
+            <span class="font-medium">{guide.title}</span>
+            <svg class="w-5 h-5 shrink-0 text-accent group-hover:translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CTA Final — Bloque 3 Output 3.1 Sección 6 -->
+  <CTABanner
+    title="¿Quieres saber cuánto ahorrarías?"
+    subtitle="Pide tu presupuesto en 24h y da el salto a la aerotermia."
+    ctaText="Solicitar estudio gratuito"
+    ctaHref="/contacto/"
+    bg="light"
+  />
+</Layout>

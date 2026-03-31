@@ -1,0 +1,53 @@
+---
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface Props {
+  items: FAQItem[];
+  title?: string;
+}
+
+const { items, title = 'Preguntas frecuentes' } = Astro.props;
+---
+
+<section class="bg-white py-16">
+  <div class="container max-w-3xl">
+    <h2 class="text-primary text-center mb-10">{title}</h2>
+    <div class="flex flex-col gap-3" id="faq-list">
+      {items.map((item, i) => (
+        <div class="border border-gray-200 rounded-base overflow-hidden">
+          <button
+            class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-primary bg-white hover:bg-gray-50 transition-colors"
+            aria-expanded="false"
+            data-faq-btn={i}
+          >
+            <span>{item.question}</span>
+            <svg class="w-5 h-5 shrink-0 transition-transform duration-200" data-faq-icon={i} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-5 pt-1 text-text text-base leading-relaxed" data-faq-panel={i}>
+            {item.answer}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('[data-faq-btn]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const i = (btn as HTMLElement).dataset.faqBtn;
+      const panel = document.querySelector(`[data-faq-panel="${i}"]`);
+      const icon = document.querySelector(`[data-faq-icon="${i}"]`);
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      panel?.classList.toggle('hidden', isOpen);
+      icon?.classList.toggle('rotate-180', !isOpen);
+    });
+  });
+</script>

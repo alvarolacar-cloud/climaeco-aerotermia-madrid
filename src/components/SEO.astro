@@ -1,0 +1,25 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  schema?: object;
+}
+
+const { title, description, canonical, schema } = Astro.props;
+const siteUrl = 'https://climaecoaerotermia.es';
+const fullCanonical = siteUrl + canonical;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={fullCanonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={fullCanonical} />
+<meta property="og:type" content="website" />
+<meta name="robots" content="index, follow" />
+
+{schema && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}

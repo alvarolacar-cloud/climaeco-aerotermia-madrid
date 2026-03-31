@@ -1,0 +1,173 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Mantenimiento de Aerotermia",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "ClimaEco Aerotermia Madrid",
+    "telephone": "+34910555123",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle de Rafael Calvo 40",
+      "addressLocality": "Madrid",
+      "postalCode": "28010",
+      "addressCountry": "ES"
+    }
+  },
+  "areaServed": "Madrid",
+  "description": "Servicio de mantenimiento preventivo y correctivo de aerotermia en Madrid. Revisiones anuales, limpieza de filtros y optimización del rendimiento."
+};
+
+const faqs = [
+  {
+    question: '¿Es obligatorio el mantenimiento de la aerotermia?',
+    answer: 'Según el RITE (Reglamento de Instalaciones Térmicas en los Edificios), es obligatoria una revisión anual para equipos de más de 12 kW de potencia.'
+  },
+  {
+    question: '¿Qué incluye la revisión anual?',
+    answer: 'Limpieza de filtros de agua y aire, purgado de circuitos, revisión del gas refrigerante, comprobación de presiones y ajuste de parámetros de la curva de calefacción.'
+  },
+  {
+    question: '¿Cada cuánto hay que hacer el mantenimiento?',
+    answer: 'Se recomienda una revisión anual preventiva. Si el equipo tiene más de 12 kW, la revisión anual es obligatoria por normativa RITE.'
+  },
+  {
+    question: '¿Qué pasa si no hago el mantenimiento?',
+    answer: 'Un equipo sin mantenimiento pierde eficiencia progresivamente, consume más electricidad y tiene mayor riesgo de averías costosas. Además, puede perder la garantía del fabricante.'
+  },
+];
+---
+
+<Layout
+  title="Mantenimiento de Aerotermia en Madrid | ClimaEco"
+  description="Servicio de mantenimiento de aerotermia en Madrid. Revisiones preventivas, limpieza de filtros y optimización del rendimiento. Técnicos especializados."
+  canonical="/mantenimiento-aerotermia/"
+  schema={schemaService}
+>
+  <!-- 1. Hero Servicio — Bloque 3 Output 3.2.3 Sección 1 -->
+  <Hero
+    title="Mantenimiento de Aerotermia."
+    subtitle="Protege tu inversión y asegura el máximo rendimiento de tu bomba de calor con nuestro servicio técnico especializado. Revisiones preventivas y reparaciones rápidas."
+    ctaText="Ver mantenimiento en Madrid"
+    ctaHref="/mantenimiento-aerotermia/madrid/"
+    size="medium"
+  />
+
+  <!-- 2. Problema / Solución — Bloque 3 Output 3.2.3 Sección 2 -->
+  <section class="bg-white py-16">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1">
+          <h2 class="text-primary mb-4">Sin mantenimiento, tu equipo pierde eficiencia</h2>
+          <p class="text-text text-lg leading-relaxed mb-4">
+            Un equipo de aerotermia sin mantenimiento pierde eficiencia, consume más electricidad y tiene mayor riesgo de averías costosas. Nuestro servicio de <strong>mantenimiento preventivo</strong> limpia filtros, revisa presiones y optimiza la configuración para que tu equipo funcione como el primer día.
+          </p>
+          <div class="bg-gray-50 rounded-base p-6">
+            <h3 class="text-primary text-base font-semibold mb-3">Consecuencias de no hacer mantenimiento:</h3>
+            <ul class="flex flex-col gap-2">
+              {[
+                'Pérdida de eficiencia: hasta un 30% más de consumo eléctrico',
+                'Mayor riesgo de averías y reparaciones costosas',
+                'Posible pérdida de garantía del fabricante',
+                'Incumplimiento del RITE para equipos > 12 kW',
+              ].map((item) => (
+                <li class="flex items-start gap-2 text-text text-sm">
+                  <svg class="w-4 h-4 text-accent shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-primary mb-4">Con mantenimiento anual:</h3>
+          <ul class="flex flex-col gap-3">
+            {[
+              'Rendimiento óptimo durante toda la vida útil',
+              'Consumo eléctrico siempre al mínimo',
+              'Garantía del fabricante siempre vigente',
+              'Cumplimiento normativo RITE garantizado',
+              'Detección temprana de problemas antes de que sean averías',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-text">
+                <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Proceso — Bloque 3 Output 3.2.3 Sección 3 -->
+  <section class="bg-secondary/10 py-16">
+    <div class="container">
+      <h2 class="text-primary text-center mb-10">Qué incluye nuestra revisión de mantenimiento</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { step: '01', title: 'Circuito frigorífico', desc: 'Revisión del circuito frigorífico y comprobación de presiones del gas refrigerante.' },
+          { step: '02', title: 'Limpieza de filtros', desc: 'Limpieza de filtros de agua y aire para garantizar el flujo óptimo.' },
+          { step: '03', title: 'Verificación eléctrica', desc: 'Comprobación de conexiones eléctricas, protecciones y consumos.' },
+          { step: '04', title: 'Circuito hidráulico', desc: 'Revisión de presión del circuito hidráulico y purgado si es necesario.' },
+          { step: '05', title: 'Curva de calefacción', desc: 'Ajuste y optimización de la curva de calefacción según la temporada.' },
+          { step: '06', title: 'Informe técnico', desc: 'Entrega de informe con el estado del equipo y recomendaciones.' },
+        ].map((item) => (
+          <div class="bg-white rounded-base p-6 shadow-sm">
+            <div class="text-accent text-2xl font-bold mb-2">{item.step}</div>
+            <h3 class="text-primary text-base font-semibold mb-2">{item.title}</h3>
+            <p class="text-text text-sm leading-relaxed m-0">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Materiales / Opciones — Bloque 3 Output 3.2.3 Sección 4 -->
+  <section class="bg-white py-16">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-6">Herramientas y recambios profesionales</h2>
+      <p class="text-text text-lg leading-relaxed">
+        Trabajamos con <strong>analizadores de gases refrigerantes</strong> y equipos de diagnóstico de última generación. Utilizamos únicamente recambios originales del fabricante para garantizar el rendimiento y mantener la garantía vigente.
+      </p>
+    </div>
+  </section>
+
+  <!-- 5. Dónde operamos — Bloque 3 Output 3.2.3 Sección 5 -->
+  <section class="bg-primary py-12">
+    <div class="container text-center">
+      <h2 class="text-white mb-4">Mantenimiento de aerotermia en Madrid</h2>
+      <p class="text-white/85 text-lg max-w-2xl mx-auto mb-8">
+        Ofrecemos servicio de mantenimiento y reparación de aerotermia en <strong class="text-accent">Madrid</strong>. Consulta nuestras tarifas y tiempos de respuesta en nuestra página local.
+      </p>
+      <a href="/mantenimiento-aerotermia/madrid/" class="btn-primary text-base">
+        Ver mantenimiento en Madrid →
+      </a>
+    </div>
+  </section>
+
+  <!-- 6. FAQs — Bloque 3 Output 3.2.3 Sección 6 -->
+  <FAQ
+    title="Preguntas frecuentes sobre mantenimiento de aerotermia"
+    items={faqs}
+  />
+
+  <!-- 7. CTA Final — Bloque 3 Output 3.2.3 Sección 7 -->
+  <CTABanner
+    title="Asegura la vida útil de tu equipo"
+    subtitle="Solicita tu revisión de mantenimiento en Madrid hoy mismo."
+    ctaText="Solicitar revisión en Madrid"
+    ctaHref="/mantenimiento-aerotermia/madrid/"
+    bg="light"
+  />
+</Layout>

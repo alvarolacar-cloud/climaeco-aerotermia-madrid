@@ -1,0 +1,169 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Instalación de Aerotermia",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "ClimaEco Aerotermia Madrid",
+    "telephone": "+34910555123",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle de Rafael Calvo 40",
+      "addressLocality": "Madrid",
+      "postalCode": "28010",
+      "addressCountry": "ES"
+    }
+  },
+  "areaServed": "Madrid",
+  "description": "Instalación de sistemas de aerotermia (bomba de calor aire-agua) para calefacción, refrigeración y ACS en viviendas de Madrid."
+};
+
+const faqs = [
+  {
+    question: '¿Se puede instalar aerotermia con radiadores normales?',
+    answer: 'Sí, utilizando equipos de aerotermia de alta temperatura. Estos equipos están diseñados para funcionar con los radiadores convencionales existentes, sin necesidad de sustituirlos.'
+  },
+  {
+    question: '¿Hace mucho ruido la unidad exterior?',
+    answer: 'Los equipos modernos son muy silenciosos, rondando los 40-50 dB en funcionamiento normal. Es similar al nivel de ruido de una conversación tranquila.'
+  },
+  {
+    question: '¿Cuánto tiempo tarda la instalación?',
+    answer: 'Una instalación estándar en un piso se realiza en 1-2 días. Si incluye suelo radiante o es una obra mayor, el plazo puede extenderse a 3-5 días.'
+  },
+  {
+    question: '¿Puedo solicitar subvenciones para la instalación?',
+    answer: 'Sí. En Madrid puedes acceder al Plan Renove de la Comunidad de Madrid, que puede cubrir hasta el 30% del coste. Nosotros gestionamos todo el papeleo.'
+  },
+];
+---
+
+<Layout
+  title="Instalación de Aerotermia en Madrid | ClimaEco"
+  description="Instalación de aerotermia en Madrid. Sistema integral bomba de calor para calefacción, refrigeración y ACS. COP > 4. Presupuesto gratuito."
+  canonical="/instalacion-aerotermia/"
+  schema={schemaService}
+>
+  <!-- 1. Hero Servicio — Bloque 3 Output 3.2.1 Sección 1 -->
+  <Hero
+    title="Instalación de Aerotermia."
+    subtitle="Pásate a la climatización del futuro: calefacción, refrigeración y agua caliente sanitaria (ACS) en un solo sistema altamente eficiente."
+    ctaText="Ver instalación en Madrid"
+    ctaHref="/instalacion-aerotermia/madrid/"
+    size="medium"
+  />
+
+  <!-- 2. Problema / Solución — Bloque 3 Output 3.2.1 Sección 2 -->
+  <section class="bg-white py-16">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1">
+          <h2 class="text-primary mb-4">¿Cansado de facturas de gas desorbitadas?</h2>
+          <p class="text-text text-lg leading-relaxed mb-4">
+            ¿Cansado de facturas de gas desorbitadas y sistemas ineficientes? La aerotermia extrae hasta el <strong>75% de su energía del aire exterior</strong>, ofreciendo una solución limpia, segura y muy rentable a medio plazo para tu vivienda.
+          </p>
+          <p class="text-text leading-relaxed">
+            A diferencia de las calderas de gas, la bomba de calor aerotérmica no quema combustible: aprovecha la energía renovable del aire para producir calor, frío y agua caliente sanitaria con un consumo eléctrico mínimo.
+          </p>
+        </div>
+        <div class="flex-1 bg-gray-50 rounded-base p-8">
+          <h3 class="text-primary mb-4">Comparativa de eficiencia</h3>
+          <div class="flex flex-col gap-4">
+            {[
+              { label: 'Caldera de gas', value: '90%', color: 'bg-gray-300' },
+              { label: 'Aerotermia (COP 4)', value: '400%', color: 'bg-accent' },
+            ].map((item) => (
+              <div>
+                <div class="flex justify-between text-sm font-semibold mb-1">
+                  <span class="text-text">{item.label}</span>
+                  <span class="text-primary">{item.value} eficiencia</span>
+                </div>
+                <div class="h-3 bg-gray-200 rounded-full overflow-hidden">
+                  <div class={`h-full ${item.color} rounded-full`} style={`width: ${item.label.includes('gas') ? '22%' : '100%'}`}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p class="text-xs text-gray-500 mt-4 m-0">COP = Coefficient of Performance. Un COP de 4 significa que por cada kWh eléctrico consumido se producen 4 kWh de energía térmica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Proceso — Bloque 3 Output 3.2.1 Sección 3 -->
+  <section class="bg-secondary/10 py-16">
+    <div class="container">
+      <h2 class="text-primary text-center mb-10">Nuestro proceso de instalación</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {[
+          { step: '01', title: 'Estudio de cargas térmicas', desc: 'Dimensionamos el equipo exacto para tu vivienda según m², orientación y aislamiento.' },
+          { step: '02', title: 'Retirada del sistema antiguo', desc: 'Retiramos calderas antiguas si es necesario, con gestión de residuos incluida.' },
+          { step: '03', title: 'Instalación del equipo', desc: 'Colocamos la unidad exterior y el módulo interior con los máximos estándares técnicos.' },
+          { step: '04', title: 'Puesta en marcha', desc: 'Equilibrado hidráulico, configuración del termostato y formación al usuario.' },
+        ].map((item) => (
+          <div class="bg-white rounded-base p-6 text-center shadow-sm">
+            <div class="text-accent text-3xl font-bold mb-3">{item.step}</div>
+            <h3 class="text-primary text-base font-semibold mb-2">{item.title}</h3>
+            <p class="text-text text-sm leading-relaxed m-0">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Materiales / Opciones — Bloque 3 Output 3.2.1 Sección 4 -->
+  <section class="bg-white py-16">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-6">Materiales y equipos que utilizamos</h2>
+      <p class="text-text text-lg leading-relaxed mb-6">
+        Trabajamos con bombas de calor aire-agua de alta eficiencia (<strong>COP &gt; 4</strong>), utilizando refrigerante <strong>R32 de bajo impacto ambiental</strong> y depósitos de inercia en acero inoxidable para garantizar la máxima durabilidad.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[
+          { title: 'Bomba de calor COP > 4', desc: 'Máxima eficiencia energética certificada' },
+          { title: 'Refrigerante R32', desc: 'Bajo impacto ambiental (GWP 675)' },
+          { title: 'Depósito inoxidable', desc: 'Máxima durabilidad y rendimiento ACS' },
+        ].map((item) => (
+          <div class="border border-gray-200 rounded-base p-5">
+            <h3 class="text-primary text-base font-semibold mb-1">{item.title}</h3>
+            <p class="text-text text-sm m-0">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Dónde operamos — Bloque 3 Output 3.2.1 Sección 5 -->
+  <section class="bg-primary py-12">
+    <div class="container text-center">
+      <h2 class="text-white mb-4">Instalaciones de aerotermia en Madrid</h2>
+      <p class="text-white/85 text-lg max-w-2xl mx-auto mb-8">
+        Realizamos instalaciones completas de aerotermia en <strong class="text-accent">Madrid</strong>. Descubre cómo adaptamos el sistema a las características de tu vivienda en nuestra página local.
+      </p>
+      <a href="/instalacion-aerotermia/madrid/" class="btn-primary text-base">
+        Ver instalación en Madrid →
+      </a>
+    </div>
+  </section>
+
+  <!-- 6. FAQs — Bloque 3 Output 3.2.1 Sección 6 -->
+  <FAQ
+    title="Preguntas frecuentes sobre instalación de aerotermia"
+    items={faqs}
+  />
+
+  <!-- 7. CTA Final — Bloque 3 Output 3.2.1 Sección 7 -->
+  <CTABanner
+    title="¿Listo para instalar aerotermia en Madrid?"
+    subtitle="Consulta los detalles técnicos, normativas y solicita tu presupuesto para la instalación en Madrid."
+    ctaText="Solicitar presupuesto en Madrid"
+    ctaHref="/instalacion-aerotermia/madrid/"
+    bg="light"
+  />
+</Layout>

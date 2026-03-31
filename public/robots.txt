@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://climaecoaerotermia.es/sitemap-index.xml

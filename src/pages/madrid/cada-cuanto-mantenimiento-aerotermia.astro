@@ -1,0 +1,210 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "¿Cada cuánto hay que hacer mantenimiento a la aerotermia?",
+  "author": { "@type": "Organization", "name": "ClimaEco Aerotermia Madrid" },
+  "publisher": { "@type": "Organization", "name": "ClimaEco Aerotermia Madrid", "url": "https://climaecoaerotermia.es" },
+  "description": "Guía completa sobre la frecuencia de mantenimiento de la aerotermia según el RITE. Revisiones obligatorias y tareas recomendadas.",
+  "mainEntityOfPage": "https://climaecoaerotermia.es/madrid/cada-cuanto-mantenimiento-aerotermia/"
+};
+---
+
+<Layout
+  title="¿Cada cuánto hacer mantenimiento a la aerotermia? | ClimaEco Madrid"
+  description="Frecuencia de mantenimiento de aerotermia según el RITE. Revisiones obligatorias cada 1 o 2 años, tareas que puedes hacer tú mismo y cuándo llamar al técnico."
+  canonical="/madrid/cada-cuanto-mantenimiento-aerotermia/"
+  schema={schemaArticle}
+>
+  <!-- 1. Hero Artículo -->
+  <section class="bg-primary text-white py-16 md:py-20">
+    <div class="container max-w-3xl">
+      <h1 class="text-white text-4xl md:text-5xl font-normal leading-tight mb-4">
+        ¿Cada cuánto hay que hacer mantenimiento a la aerotermia?
+      </h1>
+      <p class="text-white/85 text-xl leading-relaxed">
+        Conoce las revisiones obligatorias, las tareas recomendadas y cómo evitar averías en tu bomba de calor.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. Introducción -->
+  <section class="bg-white py-12">
+    <div class="container max-w-3xl">
+      <p class="text-text text-lg leading-relaxed">
+        A diferencia de las calderas de gas, la aerotermia es un sistema muy seguro que no requiere revisiones de combustión. Sin embargo, para mantener su eficiencia y cumplir con la normativa, necesita un mantenimiento periódico adecuado.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. Desarrollo principal -->
+  <section class="bg-gray-50 py-12">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-6">Frecuencia de mantenimiento según el RITE</h2>
+      <p class="text-text text-lg leading-relaxed mb-6">
+        El <strong>Reglamento de Instalaciones Térmicas en los Edificios (RITE)</strong> establece la frecuencia de las revisiones obligatorias según la potencia del equipo:
+      </p>
+
+      <div class="flex flex-col gap-4 mb-8">
+        <div class="bg-white rounded-base p-6 border-l-4 border-accent shadow-sm flex items-start gap-4">
+          <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold shrink-0">2</div>
+          <div>
+            <h3 class="text-primary font-semibold mb-1">Equipos hasta 12 kW — Revisión cada 2 años</h3>
+            <p class="text-text text-sm leading-relaxed m-0">
+              La mayoría de los equipos domésticos (pisos de hasta 120 m²) tienen una potencia inferior a 12 kW. La normativa RITE exige una revisión preventiva cada 2 años.
+            </p>
+          </div>
+        </div>
+        <div class="bg-white rounded-base p-6 border-l-4 border-secondary shadow-sm flex items-start gap-4">
+          <div class="bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold shrink-0">1</div>
+          <div>
+            <h3 class="text-primary font-semibold mb-1">Equipos de más de 12 kW — Revisión anual</h3>
+            <p class="text-text text-sm leading-relaxed m-0">
+              Los equipos de mayor potencia (chalets, viviendas grandes o instalaciones comerciales) requieren una revisión anual obligatoria.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-base p-6 shadow-sm">
+        <h3 class="text-primary font-semibold mb-3">¿Qué se revisa en cada visita?</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+          {[
+            'Presión del gas refrigerante',
+            'Limpieza de filtros de agua y aire',
+            'Funcionamiento de válvulas y sondas',
+            'Conexiones eléctricas y protecciones',
+            'Presión del circuito hidráulico',
+            'Ajuste de la curva de calefacción',
+          ].map((item) => (
+            <li class="flex items-start gap-2 text-text text-sm">
+              <svg class="w-4 h-4 text-accent shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Bloques de apoyo -->
+  <section class="bg-white py-12">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-4">Mantenimiento que puedes hacer tú mismo</h2>
+      <p class="text-text text-lg leading-relaxed mb-4">
+        Además de la revisión técnica obligatoria, hay tareas sencillas que puedes realizar tú mismo para mantener el equipo en buen estado:
+      </p>
+      <div class="flex flex-col gap-4">
+        <div class="bg-gray-50 rounded-base p-5 flex items-start gap-3">
+          <svg class="w-6 h-6 text-accent shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div>
+            <p class="font-semibold text-primary text-sm mb-1">Purgar los radiadores al inicio del invierno</p>
+            <p class="text-text text-sm m-0">Elimina el aire acumulado en los circuitos para garantizar el flujo óptimo de agua.</p>
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-base p-5 flex items-start gap-3">
+          <svg class="w-6 h-6 text-accent shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div>
+            <p class="font-semibold text-primary text-sm mb-1">Revisar la presión del circuito de agua</p>
+            <p class="text-text text-sm m-0">La presión debe mantenerse entre <strong>1,5 y 2 bares</strong>. Si baja de 1 bar, hay que rellenar el circuito.</p>
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-base p-5 flex items-start gap-3">
+          <svg class="w-6 h-6 text-accent shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div>
+            <p class="font-semibold text-primary text-sm mb-1">Limpiar la unidad exterior</p>
+            <p class="text-text text-sm m-0">Elimina hojas, polvo y suciedad del intercambiador de la unidad exterior para garantizar el flujo de aire.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Puente 1 — Tras las tareas de mantenimiento -->
+  <section class="bg-secondary/10 py-10">
+    <div class="container max-w-3xl">
+      <div class="flex flex-col md:flex-row items-start gap-6 bg-white rounded-base p-6 border-l-4 border-secondary shadow-sm">
+        <div class="flex-1">
+          <h3 class="text-primary font-semibold text-lg mb-2">¿Qué incluye el mantenimiento profesional en Madrid?</h3>
+          <p class="text-text leading-relaxed m-0">
+            Las tareas que puedes hacer tú mismo son un complemento, no un sustituto de la revisión técnica obligatoria según el RITE. En nuestra página de <a href="/mantenimiento-aerotermia/madrid/" class="text-secondary font-semibold hover:text-primary transition-colors">mantenimiento de aerotermia en Madrid</a> detallamos qué incluye cada revisión, cuánto cuesta y cómo agendarla con un técnico certificado en la capital.
+          </p>
+        </div>
+        <a href="/mantenimiento-aerotermia/madrid/" class="shrink-0 bg-accent text-white font-semibold px-5 py-3 rounded-base hover:bg-accent/90 transition-colors no-underline text-sm whitespace-nowrap">
+          Ver mantenimiento en Madrid →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Transición final -->
+  <section class="bg-gray-50 py-12">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-4">El clima de Madrid exige un mantenimiento cuidadoso</h2>
+      <p class="text-text text-lg leading-relaxed">
+        Un equipo en Madrid, expuesto a altas temperaturas en verano y heladas en invierno, sufre un desgaste que puede reducir su eficiencia si los filtros están sucios o el circuito no está correctamente purgado. Contar con un servicio técnico local garantiza una respuesta rápida ante cualquier anomalía.
+      </p>
+    </div>
+  </section>
+
+  <!-- Puente 2 — Antes del CTA final -->
+  <section class="bg-white py-12">
+    <div class="container max-w-3xl">
+      <div class="bg-primary rounded-base p-8 text-center">
+        <h3 class="text-white text-xl font-semibold mb-3">¿Te toca la revisión o notas algo raro en tu equipo?</h3>
+        <p class="text-white/85 leading-relaxed mb-6">
+          Ahora que sabes con qué frecuencia hay que revisar la aerotermia, el siguiente paso es tener un técnico de confianza en Madrid. Nuestro equipo da precio cerrado antes de la visita y emite el certificado de mantenimiento obligatorio según el RITE.
+        </p>
+        <a href="/mantenimiento-aerotermia/madrid/" class="inline-block bg-accent text-white font-semibold px-8 py-3 rounded-base hover:bg-accent/90 transition-colors no-underline">
+          Ver mantenimiento de aerotermia en Madrid →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artículos relacionados -->
+  <section class="bg-gray-50 py-12">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-6">Artículos relacionados</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="/madrid/cuanto-cuesta-instalar-aerotermia/" class="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">¿Cuánto cuesta instalar aerotermia en Madrid?</span>
+        </a>
+        <a href="/madrid/aerotermia-vs-caldera-gas/" class="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">Aerotermia vs Caldera de Gas: ¿Cuál es mejor?</span>
+        </a>
+        <a href="/madrid/" class="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">Todos los servicios de aerotermia en Madrid</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    title="¿Te toca la revisión anual?"
+    subtitle="Agenda tu visita técnica en Madrid. Precio cerrado antes de la visita."
+    ctaText="Solicitar revisión en Madrid"
+    ctaHref="/mantenimiento-aerotermia/madrid/"
+    bg="primary"
+  />
+</Layout>

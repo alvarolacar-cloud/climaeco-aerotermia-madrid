@@ -1,0 +1,45 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  ctaText: string;
+  ctaHref?: string;
+  phone?: boolean;
+  bg?: 'primary' | 'accent' | 'light';
+}
+
+const {
+  title,
+  subtitle,
+  ctaText,
+  ctaHref = '/contacto/',
+  phone = true,
+  bg = 'primary',
+} = Astro.props;
+
+const bgClass = bg === 'accent'
+  ? 'bg-accent'
+  : bg === 'light'
+  ? 'bg-gray-50'
+  : 'bg-primary';
+
+const textClass = bg === 'light' ? 'text-primary' : 'text-white';
+const subClass = bg === 'light' ? 'text-text' : 'text-white/85';
+---
+
+<section class={`${bgClass} py-16`}>
+  <div class="container text-center max-w-2xl">
+    <h2 class={`${textClass} mb-4`}>{title}</h2>
+    {subtitle && <p class={`${subClass} text-lg mb-8`}>{subtitle}</p>}
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a href={ctaHref} class={bg === 'light' ? 'btn-primary' : 'btn-primary'}>
+        {ctaText}
+      </a>
+      {phone && (
+        <a href="tel:+34910555123" class={`font-semibold text-lg no-underline transition-colors ${bg === 'light' ? 'text-primary hover:text-accent' : 'text-accent hover:text-white'}`}>
+          +34 910 555 123
+        </a>
+      )}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,56 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  ctaSecondaryText?: string;
+  ctaSecondaryHref?: string;
+  bgColor?: 'primary' | 'dark' | 'image';
+  size?: 'large' | 'medium';
+}
+
+const {
+  title,
+  subtitle,
+  ctaText,
+  ctaHref = '/contacto/',
+  ctaSecondaryText,
+  ctaSecondaryHref,
+  bgColor = 'primary',
+  size = 'large',
+} = Astro.props;
+
+const bgClass = bgColor === 'dark'
+  ? 'bg-gray-900'
+  : 'bg-primary';
+
+const paddingClass = size === 'large' ? 'py-24 md:py-32' : 'py-16 md:py-20';
+---
+
+<section class={`${bgClass} text-white ${paddingClass}`}>
+  <div class="container">
+    <div class="max-w-3xl">
+      <h1 class="text-white text-4xl md:text-5xl font-normal leading-tight mb-6">
+        {title}
+      </h1>
+      {subtitle && (
+        <p class="text-white/85 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
+          {subtitle}
+        </p>
+      )}
+      <div class="flex flex-wrap gap-4">
+        {ctaText && (
+          <a href={ctaHref} class="btn-primary text-base">
+            {ctaText}
+          </a>
+        )}
+        {ctaSecondaryText && ctaSecondaryHref && (
+          <a href={ctaSecondaryHref} class="btn-outline border-white text-white hover:bg-white hover:text-primary text-base">
+            {ctaSecondaryText}
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,212 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Aerotermia vs Caldera de Gas en Madrid: ¿Cuál es la mejor opción?",
+  "author": { "@type": "Organization", "name": "ClimaEco Aerotermia Madrid" },
+  "publisher": { "@type": "Organization", "name": "ClimaEco Aerotermia Madrid", "url": "https://climaecoaerotermia.es" },
+  "description": "Comparativa completa entre aerotermia y caldera de gas en Madrid. Consumo, precio de instalación, mantenimiento y normativas.",
+  "mainEntityOfPage": "https://climaecoaerotermia.es/madrid/aerotermia-vs-caldera-gas/"
+};
+---
+
+<Layout
+  title="Aerotermia vs Caldera de Gas en Madrid: ¿Cuál es mejor? | ClimaEco"
+  description="Comparativa aerotermia vs caldera de gas en Madrid. Eficiencia, coste de instalación, mantenimiento y normativas europeas. Decide con datos reales."
+  canonical="/madrid/aerotermia-vs-caldera-gas/"
+  schema={schemaArticle}
+>
+  <!-- 1. Hero Artículo -->
+  <section class="bg-primary text-white py-16 md:py-20">
+    <div class="container max-w-3xl">
+      <h1 class="text-white text-4xl md:text-5xl font-normal leading-tight mb-4">
+        Aerotermia vs Caldera de Gas en Madrid: ¿Cuál es la mejor opción?
+      </h1>
+      <p class="text-white/85 text-xl leading-relaxed">
+        Comparamos consumo, precio de instalación, mantenimiento y normativas para ayudarte a decidir.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. Introducción -->
+  <section class="bg-white py-12">
+    <div class="container max-w-3xl">
+      <p class="text-text text-lg leading-relaxed">
+        A la hora de reformar el sistema de calefacción en Madrid, la duda más frecuente es si mantener la tradicional caldera de gas de condensación o dar el salto a la aerotermia. Ambas opciones tienen pros y contras dependiendo de tu tipo de vivienda.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. Desarrollo principal -->
+  <section class="bg-gray-50 py-12">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-6">Comparativa: aerotermia vs caldera de gas en Madrid</h2>
+
+      <div class="overflow-x-auto mb-8">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="px-4 py-3 text-left font-semibold">Factor</th>
+              <th class="px-4 py-3 text-left font-semibold">Aerotermia</th>
+              <th class="px-4 py-3 text-left font-semibold">Caldera de gas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-3 font-semibold text-primary">Eficiencia</td>
+              <td class="px-4 py-3 text-text"><strong class="text-accent">COP 4 = 400%</strong></td>
+              <td class="px-4 py-3 text-text">Hasta 100%</td>
+            </tr>
+            <tr class="border-b border-gray-200 bg-gray-50">
+              <td class="px-4 py-3 font-semibold text-primary">Coste instalación</td>
+              <td class="px-4 py-3 text-text">6.000€ — 12.000€</td>
+              <td class="px-4 py-3 text-text"><strong class="text-accent">1.500€ — 2.500€</strong></td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-3 font-semibold text-primary">Gasto anual (100 m²)</td>
+              <td class="px-4 py-3 text-text"><strong class="text-accent">~720€</strong></td>
+              <td class="px-4 py-3 text-text">~2.400€</td>
+            </tr>
+            <tr class="border-b border-gray-200 bg-gray-50">
+              <td class="px-4 py-3 font-semibold text-primary">Mantenimiento</td>
+              <td class="px-4 py-3 text-text"><strong class="text-accent">Menor — cada 2 años</strong></td>
+              <td class="px-4 py-3 text-text">Obligatorio anual</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-3 font-semibold text-primary">Seguridad</td>
+              <td class="px-4 py-3 text-text"><strong class="text-accent">Sin riesgo de fugas de gas</strong></td>
+              <td class="px-4 py-3 text-text">Riesgo de fugas de gas</td>
+            </tr>
+            <tr class="border-b border-gray-200 bg-gray-50">
+              <td class="px-4 py-3 font-semibold text-primary">Refrigeración</td>
+              <td class="px-4 py-3 text-text"><strong class="text-accent">Sí, incluida</strong></td>
+              <td class="px-4 py-3 text-text">No</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-4 py-3 font-semibold text-primary">Futuro normativo</td>
+              <td class="px-4 py-3 text-text"><strong class="text-accent">Sin restricciones previstas</strong></td>
+              <td class="px-4 py-3 text-text">Restricciones crecientes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <div class="bg-white rounded-base p-6 border-l-4 border-accent shadow-sm">
+          <h3 class="text-primary font-semibold mb-2">Consumo y eficiencia</h3>
+          <p class="text-text leading-relaxed m-0">
+            La aerotermia es hasta un <strong>400% más eficiente</strong>, generando 4 kW de calor por cada 1 kW eléctrico consumido (COP 4), mientras que la caldera de gas se queda en un 100% de rendimiento máximo.
+          </p>
+        </div>
+        <div class="bg-white rounded-base p-6 border-l-4 border-secondary shadow-sm">
+          <h3 class="text-primary font-semibold mb-2">Coste de instalación</h3>
+          <p class="text-text leading-relaxed m-0">
+            La caldera de gas es más barata de instalar (<strong>1.500€ - 2.500€</strong>) frente a la aerotermia (<strong>6.000€ - 12.000€</strong>). Sin embargo, el mayor coste inicial de la aerotermia se recupera en 5-7 años gracias al ahorro en la factura.
+          </p>
+        </div>
+        <div class="bg-white rounded-base p-6 border-l-4 border-gray-300 shadow-sm">
+          <h3 class="text-primary font-semibold mb-2">Mantenimiento</h3>
+          <p class="text-text leading-relaxed m-0">
+            El gas requiere revisiones obligatorias más estrictas y tiene riesgo de fugas. La aerotermia es más segura y requiere menos mantenimiento mecánico — una revisión cada 2 años para equipos de hasta 12 kW.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Bloques de apoyo -->
+  <section class="bg-white py-12">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-4">El factor normativo: adelantarse al futuro</h2>
+      <p class="text-text text-lg leading-relaxed mb-4">
+        Las normativas europeas y las nuevas restricciones de emisiones en ciudades están limitando progresivamente el uso de combustibles fósiles. Instalar aerotermia hoy es adelantarse a las prohibiciones futuras y <strong>revalorizar la vivienda</strong>.
+      </p>
+      <div class="bg-secondary/10 rounded-base p-6">
+        <p class="text-primary font-semibold mb-2">Directiva europea de eficiencia energética</p>
+        <p class="text-text leading-relaxed m-0">
+          La Unión Europea tiene previsto prohibir la venta de calderas de gas nuevas a partir de 2029 en el marco de la Directiva de Eficiencia Energética de los Edificios. Las ciudades como Madrid ya están adaptando sus normativas locales.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Puente 1 — Tras la tabla comparativa -->
+  <section class="bg-secondary/10 py-10">
+    <div class="container max-w-3xl">
+      <div class="flex flex-col md:flex-row items-start gap-6 bg-white rounded-base p-6 border-l-4 border-secondary shadow-sm">
+        <div class="flex-1">
+          <h3 class="text-primary font-semibold text-lg mb-2">Cómo se aplica esta comparativa en Madrid</h3>
+          <p class="text-text leading-relaxed m-0">
+            Los datos de la tabla son generales, pero en Madrid hay factores adicionales: la normativa de ruido de las comunidades de vecinos, las restricciones de fachada en edificios protegidos de Chamberí o Salamanca, y las subvenciones del Plan Renove que pueden inclinar definitivamente la balanza. En nuestra página de <a href="/instalacion-aerotermia/madrid/" class="text-secondary font-semibold hover:text-primary transition-colors">instalación de aerotermia en Madrid</a> explicamos cómo gestionamos cada uno de estos factores.
+          </p>
+        </div>
+        <a href="/instalacion-aerotermia/madrid/" class="shrink-0 bg-accent text-white font-semibold px-5 py-3 rounded-base hover:bg-accent/90 transition-colors no-underline text-sm whitespace-nowrap">
+          Ver instalación en Madrid →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Transición final -->
+  <section class="bg-gray-50 py-12">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-4">¿Cuál te conviene a ti?</h2>
+      <p class="text-text text-lg leading-relaxed">
+        Si vives en un piso céntrico de Madrid, el espacio para la unidad exterior puede ser un reto, mientras que en un chalet la aerotermia es la opción indiscutible. Un estudio técnico de tu vivienda es el único modo de saber qué sistema te conviene más.
+      </p>
+    </div>
+  </section>
+
+  <!-- Puente 2 — Antes del CTA final -->
+  <section class="bg-white py-12">
+    <div class="container max-w-3xl">
+      <div class="bg-primary rounded-base p-8 text-center">
+        <h3 class="text-white text-xl font-semibold mb-3">¿Ya tienes claro que la aerotermia es tu opción?</h3>
+        <p class="text-white/85 leading-relaxed mb-6">
+          La comparativa te da el marco teórico, pero la decisión real se toma con un estudio de tu vivienda en mano. Nuestro equipo en Madrid evalúa tu caso en 24 horas y te dice exactamente qué equipo necesitas, qué subvenciones puedes pedir y cuánto ahorrarías.
+        </p>
+        <a href="/instalacion-aerotermia/madrid/" class="inline-block bg-accent text-white font-semibold px-8 py-3 rounded-base hover:bg-accent/90 transition-colors no-underline">
+          Ver instalación de aerotermia en Madrid →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artículos relacionados -->
+  <section class="bg-gray-50 py-12">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-6">Artículos relacionados</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="/madrid/cuanto-cuesta-instalar-aerotermia/" class="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">¿Cuánto cuesta instalar aerotermia en Madrid?</span>
+        </a>
+        <a href="/madrid/precio-aerotermia-suelo-radiante/" class="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">Precio de aerotermia con suelo radiante en Madrid</span>
+        </a>
+        <a href="/madrid/" class="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">Todos los servicios de aerotermia en Madrid</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    title="¿Quieres evaluar si la aerotermia es viable en tu vivienda?"
+    subtitle="Solicita un diagnóstico técnico gratuito y sin compromiso."
+    ctaText="Solicitar diagnóstico gratuito"
+    ctaHref="/instalacion-aerotermia/madrid/"
+    bg="primary"
+  />
+</Layout>

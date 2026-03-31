@@ -1,0 +1,173 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import FAQ from '../../components/FAQ.astro';
+import ContactForm from '../../components/ContactForm.astro';
+
+const schemaLocalBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ClimaEco Aerotermia Madrid",
+  "url": "https://climaecoaerotermia.es/mantenimiento-aerotermia/madrid/",
+  "telephone": "+34910555123",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle de Rafael Calvo 40",
+    "addressLocality": "Madrid",
+    "postalCode": "28010",
+    "addressCountry": "ES"
+  },
+  "areaServed": "Madrid"
+};
+
+const faqs = [
+  {
+    question: '¿Cada cuánto hay que revisar la aerotermia en Madrid?',
+    answer: 'Según el RITE, los equipos hasta 12 kW requieren revisión cada 2 años, y los de más de 12 kW, anualmente. Además, recomendamos una revisión antes de cada temporada de invierno.'
+  },
+  {
+    question: '¿Cuánto cuesta una revisión de mantenimiento en Madrid?',
+    answer: 'El precio de una revisión anual completa en Madrid oscila entre 120€ y 200€ dependiendo de la potencia del equipo y las tareas necesarias. Te damos precio cerrado antes de la visita.'
+  },
+  {
+    question: '¿Hacéis reparaciones urgentes en Madrid?',
+    answer: 'Sí, disponemos de servicio de reparación urgente en Madrid con respuesta en menos de 24 horas para averías que dejen el equipo sin funcionamiento.'
+  },
+  {
+    question: '¿Trabajáis con todas las marcas de aerotermia?',
+    answer: 'Sí, nuestros técnicos están formados en las principales marcas del mercado: Daikin, Mitsubishi, Panasonic, Saunier Duval, Vaillant y otras.'
+  },
+];
+---
+
+<Layout
+  title="Mantenimiento de Aerotermia en Madrid | ClimaEco — Técnicos especializados"
+  description="Servicio de mantenimiento de aerotermia en Madrid. Revisiones preventivas, reparaciones urgentes. Chamberí, Salamanca, Chamartín. Respuesta en 24h."
+  canonical="/mantenimiento-aerotermia/madrid/"
+  schema={schemaLocalBusiness}
+>
+  <Hero
+    title="Mantenimiento de Aerotermia en Madrid."
+    subtitle="Técnicos especializados para mantener tu bomba de calor en perfecto estado. Revisiones preventivas, reparaciones urgentes y cumplimiento del RITE."
+    ctaText="Solicitar revisión"
+    ctaHref="#contacto"
+    ctaSecondaryText="Llamar ahora"
+    ctaSecondaryHref="tel:+34910555123"
+    size="large"
+  />
+
+  <section class="bg-white py-16">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-4">Mantenimiento de aerotermia en Madrid</h2>
+      <p class="text-text text-lg leading-relaxed mb-4">
+        Madrid tiene un clima exigente para los equipos de aerotermia: veranos muy calurosos y inviernos fríos que someten al equipo a ciclos de trabajo intensos. Un mantenimiento preventivo anual garantiza que tu bomba de calor funcione con la máxima eficiencia durante todo el año.
+      </p>
+      <p class="text-text leading-relaxed">
+        Nuestro servicio técnico cubre toda la capital, con especial presencia en <strong>Chamberí</strong>, <strong>Salamanca</strong> y <strong>Chamartín</strong>. Respondemos en menos de 24 horas ante cualquier avería.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-16">
+    <div class="container">
+      <h2 class="text-primary text-center mb-10">Cobertura en Madrid</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-base p-6 border-l-4 border-accent shadow-sm">
+          <h3 class="text-primary font-semibold mb-2">Chamberí <span class="text-accent text-xs font-normal">(Zona principal)</span></h3>
+          <p class="text-text text-sm leading-relaxed m-0">Servicio técnico de mantenimiento en Chamberí — Almagro, Trafalgar, Ríos Rosas. Respuesta rápida al estar en el mismo distrito.</p>
+        </div>
+        <div class="bg-white rounded-base p-6 border-l-4 border-secondary shadow-sm">
+          <h3 class="text-primary font-semibold mb-2">Salamanca</h3>
+          <p class="text-text text-sm leading-relaxed m-0">Mantenimiento en Salamanca — Recoletos, Goya, Lista. Revisiones en viviendas de alto standing con equipos de alta gama.</p>
+        </div>
+        <div class="bg-white rounded-base p-6 border-l-4 border-gray-300 shadow-sm">
+          <h3 class="text-primary font-semibold mb-2">Chamartín</h3>
+          <p class="text-text text-sm leading-relaxed m-0">Servicio en Chamartín — El Viso, Prosperidad. Mantenimiento de equipos en chalets y viviendas unifamiliares.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-start gap-12">
+        <div class="flex-1">
+          <h2 class="text-primary mb-4">Nuestro servicio de mantenimiento</h2>
+          <ul class="flex flex-col gap-3">
+            {[
+              'Revisión anual preventiva completa',
+              'Reparaciones urgentes en menos de 24h',
+              'Recambios originales del fabricante',
+              'Informe técnico tras cada revisión',
+              'Cumplimiento normativo RITE garantizado',
+              'Contrato de mantenimiento anual disponible',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-text">
+                <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="flex-1 bg-primary rounded-base p-8 text-white">
+          <h3 class="text-white mb-4">Precios orientativos</h3>
+          <div class="flex flex-col gap-4">
+            <div class="border-b border-white/20 pb-3">
+              <div class="text-white/70 text-sm">Revisión anual (hasta 12 kW)</div>
+              <div class="text-accent text-xl font-bold">120€ — 160€</div>
+            </div>
+            <div class="border-b border-white/20 pb-3">
+              <div class="text-white/70 text-sm">Revisión anual (más de 12 kW)</div>
+              <div class="text-accent text-xl font-bold">160€ — 200€</div>
+            </div>
+            <div>
+              <div class="text-white/70 text-sm">Diagnóstico de avería</div>
+              <div class="text-accent text-xl font-bold">Desde 60€</div>
+            </div>
+          </div>
+          <p class="text-white/60 text-xs mt-4 m-0">Precios orientativos sin IVA. Presupuesto cerrado antes de la visita.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-secondary/10 py-12">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-6">¿Tienes dudas sobre el mantenimiento?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="/madrid/cada-cuanto-mantenimiento-aerotermia/" class="flex items-center gap-3 p-4 border border-gray-200 bg-white rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">¿Cada cuánto hay que hacer mantenimiento?</span>
+        </a>
+        <a href="/mantenimiento-aerotermia/" class="flex items-center gap-3 p-4 border border-gray-200 bg-white rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">Detalles técnicos del servicio de mantenimiento</span>
+        </a>
+        <a href="/madrid/" class="flex items-center gap-3 p-4 border border-gray-200 bg-white rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">Todos los servicios de aerotermia en Madrid</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <FAQ
+    title="Preguntas frecuentes sobre mantenimiento en Madrid"
+    items={faqs}
+  />
+
+  <div id="contacto">
+    <ContactForm
+      title="Solicita tu revisión de mantenimiento en Madrid"
+      subtitle="Te confirmamos fecha y precio antes de la visita. Sin sorpresas."
+    />
+  </div>
+</Layout>

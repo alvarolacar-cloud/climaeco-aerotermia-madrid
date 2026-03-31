@@ -1,0 +1,216 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import ContactForm from '../../components/ContactForm.astro';
+
+const schemaLocalBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ClimaEco Aerotermia Madrid",
+  "url": "https://climaecoaerotermia.es/instalacion-aerotermia/madrid/",
+  "telephone": "+34910555123",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle de Rafael Calvo 40",
+    "addressLocality": "Madrid",
+    "postalCode": "28010",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.4352,
+    "longitude": -3.6931
+  },
+  "areaServed": "Madrid",
+  "description": "Instalación de aerotermia en Madrid. Especialistas en bombas de calor para viviendas en Chamberí, Salamanca y toda la capital."
+};
+
+const faqs = [
+  {
+    question: '¿Necesito permiso de la comunidad de vecinos en Madrid?',
+    answer: 'Sí, para colocar la unidad exterior en la fachada o azotea necesitas autorización de la comunidad. Te asesoramos en el trámite y preparamos la documentación necesaria.'
+  },
+  {
+    question: '¿Puedo pedir las ayudas de la Comunidad de Madrid?',
+    answer: 'Sí, gestionamos el papeleo del Plan Renove de la Comunidad de Madrid si los fondos están activos. Esta ayuda puede cubrir hasta el 30% del coste de la instalación.'
+  },
+  {
+    question: '¿Hace falta licencia de obra en el Ayuntamiento de Madrid?',
+    answer: 'En la mayoría de los casos se necesita una licencia de obra menor. Nosotros gestionamos toda la tramitación con el Ayuntamiento de Madrid.'
+  },
+  {
+    question: '¿Cuánto tiempo tarda la instalación en un piso de Madrid?',
+    answer: 'Una instalación estándar en un piso de Madrid se completa en 1-2 días laborables. Si el edificio tiene restricciones de acceso o la instalación es compleja, puede extenderse a 3 días.'
+  },
+];
+---
+
+<Layout
+  title="Instalación de Aerotermia en Madrid | ClimaEco — Presupuesto en 24h"
+  description="Instalación de aerotermia en Madrid por instaladores certificados. Chamberí, Salamanca, Chamartín. Gestión de subvenciones Plan Renove. Presupuesto gratuito en 24h."
+  canonical="/instalacion-aerotermia/madrid/"
+  schema={schemaLocalBusiness}
+>
+  <!-- 1. Hero Local — Bloque 3 Output 3.3 Sección 1 -->
+  <Hero
+    title="Instalación de Aerotermia en Madrid."
+    subtitle="Tu sistema de bomba de calor instalado por expertos locales. Pide tu estudio gratuito hoy y empieza a ahorrar en tu próxima factura."
+    ctaText="Pedir estudio gratuito"
+    ctaHref="#contacto"
+    ctaSecondaryText="Llamar ahora"
+    ctaSecondaryHref="tel:+34910555123"
+    size="large"
+  />
+
+  <!-- 2. Contexto Local — Bloque 3 Output 3.3 Sección 2 -->
+  <section class="bg-white py-16">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-4">Instalación de aerotermia adaptada a Madrid</h2>
+      <p class="text-text text-lg leading-relaxed mb-4">
+        Madrid presenta retos únicos: desde pisos antiguos en <strong>Chamberí</strong> con sistemas de calefacción central obsoletos, hasta chalets en las afueras. Adaptamos la instalación a la normativa del Ayuntamiento y a las restricciones de ruido de tu comunidad de vecinos.
+      </p>
+      <p class="text-text leading-relaxed">
+        Conocemos las particularidades de los edificios del centro de Madrid: fachadas protegidas, patios interiores, comunidades con normativas estrictas. Nuestra experiencia en la capital nos permite encontrar siempre la solución técnica más adecuada.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. Bloque de Zonas — Bloque 3 Output 3.3 Sección 3 -->
+  <section class="bg-gray-50 py-16">
+    <div class="container">
+      <h2 class="text-primary text-center mb-10">Cobertura en Madrid</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-base p-6 border-l-4 border-accent shadow-sm">
+          <h3 class="text-primary font-semibold mb-2">Chamberí <span class="text-accent text-xs font-normal">(Zona principal)</span></h3>
+          <p class="text-text text-sm leading-relaxed m-0">
+            Especialistas en instalaciones complejas en <strong>Chamberí</strong> — Almagro, Trafalgar, Ríos Rosas, Vallehermoso. Conocemos cada edificio del distrito.
+          </p>
+        </div>
+        <div class="bg-white rounded-base p-6 border-l-4 border-secondary shadow-sm">
+          <h3 class="text-primary font-semibold mb-2">Salamanca</h3>
+          <p class="text-text text-sm leading-relaxed m-0">
+            Amplia experiencia en reformas energéticas en el barrio de <strong>Salamanca</strong> — Recoletos, Goya, Lista. Viviendas de alto standing con exigencias técnicas elevadas.
+          </p>
+        </div>
+        <div class="bg-white rounded-base p-6 border-l-4 border-gray-300 shadow-sm">
+          <h3 class="text-primary font-semibold mb-2">Chamartín</h3>
+          <p class="text-text text-sm leading-relaxed m-0">
+            Servicio en la zona de <strong>Chamartín</strong> — El Viso, Prosperidad, Ciudad Jardín. Instalaciones en chalets y edificios residenciales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Servicio en la ciudad — Bloque 3 Output 3.3 Sección 4 -->
+  <section class="bg-white py-16">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-start gap-12">
+        <div class="flex-1">
+          <h2 class="text-primary mb-4">Gestión completa en Madrid</h2>
+          <p class="text-text text-lg leading-relaxed mb-4">
+            Gestionamos todo el proceso local: desde la solicitud de <strong>licencias de obra menor en el Ayuntamiento de Madrid</strong> hasta la tramitación de las subvenciones del <strong>Plan Renove de la Comunidad de Madrid</strong> para equipos de alta eficiencia.
+          </p>
+          <ul class="flex flex-col gap-3">
+            {[
+              'Tramitación de licencias de obra menor con el Ayuntamiento',
+              'Gestión de subvenciones del Plan Renove (hasta 30% del coste)',
+              'Coordinación con la comunidad de propietarios',
+              'Certificado de instalación y documentación técnica',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-text">
+                <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="flex-1 bg-primary rounded-base p-8 text-white">
+          <h3 class="text-white mb-4">Garantías que ofrecemos</h3>
+          <ul class="flex flex-col gap-4">
+            {[
+              { title: 'Instaladores autorizados', desc: 'Certificados por el Ministerio de Industria' },
+              { title: 'Presupuesto cerrado', desc: 'Sin sorpresas de última hora' },
+              { title: '2 años de garantía', desc: 'Total en mano de obra y equipos' },
+              { title: 'Respuesta en 24h', desc: 'Presupuesto detallado en un día' },
+            ].map((item) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <div>
+                  <div class="font-semibold text-white text-sm">{item.title}</div>
+                  <div class="text-white/70 text-xs">{item.desc}</div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Prueba local — Bloque 3 Output 3.3 Sección 6 -->
+  <section class="bg-secondary/10 py-16">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-8">Proyecto reciente en Madrid</h2>
+      <blockquote class="bg-white rounded-base p-8 border-l-4 border-accent shadow-sm">
+        <p class="text-text text-lg italic leading-relaxed mb-4">
+          <strong>Proyecto en Calle de Rafael Calvo, Chamberí:</strong> Sustitución de caldera de gasoil por equipo de aerotermia de 12kW para calefacción por radiadores en piso de 140m². Ahorro estimado del 60% anual.
+        </p>
+        <footer class="text-primary font-semibold text-sm">— Instalación completada en 2 días, gestión de licencia incluida</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 8. Enlaces internos — Bloque 3 Output 3.3 Sección 8 -->
+  <section class="bg-white py-12">
+    <div class="container max-w-3xl">
+      <h2 class="text-primary mb-6">¿Tienes dudas sobre la instalación?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="/madrid/cuanto-cuesta-instalar-aerotermia/" class="flex items-center gap-3 p-4 border border-gray-200 rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">¿Cuánto cuesta instalar aerotermia en Madrid?</span>
+        </a>
+        <a href="/instalacion-aerotermia/" class="flex items-center gap-3 p-4 border border-gray-200 rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">Detalles técnicos del servicio de instalación</span>
+        </a>
+        <a href="/madrid/" class="flex items-center gap-3 p-4 border border-gray-200 rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">Todos los servicios de aerotermia en Madrid</span>
+        </a>
+        <a href="/madrid/aerotermia-vs-caldera-gas/" class="flex items-center gap-3 p-4 border border-gray-200 rounded-base hover:border-secondary transition-colors no-underline group">
+          <svg class="w-5 h-5 text-accent shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-text text-sm group-hover:text-primary transition-colors">Aerotermia vs Caldera de Gas: ¿Cuál es mejor?</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQs Locales — Bloque 3 Output 3.3 Sección 7 -->
+  <FAQ
+    title="Preguntas frecuentes sobre instalación en Madrid"
+    items={faqs}
+  />
+
+  <!-- 9. CTA + Formulario — Bloque 3 Output 3.3 Sección 9 -->
+  <div id="contacto">
+    <ContactForm
+      title="Solicita tu visita técnica gratuita en Madrid"
+      subtitle="Evaluamos tu vivienda y te entregamos un presupuesto detallado en 24 horas."
+    />
+  </div>
+</Layout>
